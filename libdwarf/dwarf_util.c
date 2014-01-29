@@ -131,6 +131,7 @@ _dwarf_get_size_of_val(Dwarf_Debug dbg,
         return (1);
 
     case DW_FORM_sec_offset:
+    case DW_FORM_GNU_ref_alt:
         /* If 32bit dwarf, is 4. Else is 64bit dwarf and is 8. */
         return (v_length_size);
 
@@ -177,6 +178,7 @@ _dwarf_get_size_of_val(Dwarf_Debug dbg,
         return (leb128_length);
 
     case DW_FORM_strp:
+    case DW_FORM_GNU_strp_alt:
         return (v_length_size);
 
     case DW_FORM_udata:
