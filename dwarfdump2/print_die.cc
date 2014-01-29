@@ -3623,6 +3623,12 @@ get_attr_value(Dwarf_Debug dbg, Dwarf_Half tag,
         }
         }
         break;
+    case DW_FORM_GNU_ref_alt:
+        str_out.append(BracketSurround(string("alt global die offset")));
+        break;
+    case DW_FORM_GNU_strp_alt:
+        str_out.append(BracketSurround(string("alt global string offset")));
+        break;
     default:
         print_error(dbg, "dwarf_whatform unexpected value", DW_DLV_OK,
             err);
